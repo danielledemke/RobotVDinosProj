@@ -11,6 +11,7 @@ namespace RobotsVsDinosaursProject
         static void Main(string[] args)
         {
             Battlefield game = new Battlefield();
+            Console.ReadLine();
             
 
         }

@@ -28,30 +28,35 @@ namespace RobotsVsDinosaursProject
         //member methods
         public void ChooseDinosaur()
         {
-            Console.WriteLine("Please choose type of dinosaur to spawn: TRex, Velociraptor, or Triceratops \n");
-            string type = Console.ReadLine();
-            this.type = type;
 
-            switch (type)
+
+            do
             {
-                case "TRex":
-                case "trex":
-                case "Trex":
-                    attackPower = 50;
-                    break;
-                case "Velociraptor":
-                case "velociraptor":
-                    attackPower = 30;
-                    break;
-                case "Triceratops":
-                case "triceratops":
-                    attackPower = 20;
-                    break;
-                default:
-                    Console.WriteLine("Not a valid entry");
-                    break;
-             }
-
+                Console.WriteLine("Please choose type of dinosaur to spawn: TRex, Velociraptor, or Triceratops \n");
+                string type = Console.ReadLine();
+                this.type = type;
+                switch (type)
+                {
+                    case "TRex":
+                    case "trex":
+                    case "Trex":
+                        attackPower = 50;
+                        break;
+                    case "Velociraptor":
+                    case "velociraptor":
+                        attackPower = 30;
+                        break;
+                    case "Triceratops":
+                    case "triceratops":
+                        attackPower = 20;
+                        break;
+                    default:
+                        Console.WriteLine("Not a valid entry");
+                        break;
+                }
+            }
+            while (type == null);
+            
         }
         public int AttackRobot(Robot robot)
         {

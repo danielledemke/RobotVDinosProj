@@ -12,16 +12,15 @@ namespace RobotsVsDinosaursProject
         public string name = "";
         public int health;
         public int powerLevel;
-        public int attackPower = 0;
-        
+        public int attackPower;
+        public Weapon weapon;
 
         
         //constructor
         public Robot(string name)
         {
-            Weapon weapon = new Weapon();
-            weapon.AssignWeapon();
-            weapon.attackValue += attackPower;
+            weapon = new Weapon();
+            attackPower = weapon.attackValue;
             this.name = name;
             Console.WriteLine(name + " the Robot has spawned into the game with a " + weapon.type);
             powerLevel = 100;
@@ -33,6 +32,7 @@ namespace RobotsVsDinosaursProject
         public void AttackDino(Dinosaur dino)
         {
             dino.health -= attackPower;
+            powerLevel -= 10;
         }
 
     }

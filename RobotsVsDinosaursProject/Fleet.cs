@@ -10,7 +10,7 @@ namespace RobotsVsDinosaursProject
     {
 
         //member variables
-        public List<Robot> robots = new List<Robot>();
+        public List<Robot> robots;
 
         //constructor
         public Fleet()
@@ -26,6 +26,7 @@ namespace RobotsVsDinosaursProject
             Robot robot1 = new Robot("Optimus Prime");
             Robot robot2 = new Robot("Bumblebee");
             Robot robot3 = new Robot("Johnny 5");
+           robots = new List<Robot>();
             robots.Add(robot1);
             robots.Add(robot2);
             robots.Add(robot3);

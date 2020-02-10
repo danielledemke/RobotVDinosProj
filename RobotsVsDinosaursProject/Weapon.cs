@@ -24,7 +24,7 @@ namespace RobotsVsDinosaursProject
 
         public void AssignWeapon()
         {
-            Console.WriteLine("Enter weapon type: Axe, Laser Gun, or Rocket Launcher \n");
+            Console.WriteLine("Enter weapon type to give to Robot: Axe, Laser Gun, or Rocket Launcher \n");
             type = Console.ReadLine();
             switch (type)
             {

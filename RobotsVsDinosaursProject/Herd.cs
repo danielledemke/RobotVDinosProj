@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace RobotsVsDinosaursProject
 {
-    class Herd : Dinosaur
+    class Herd
     {
         //member variables
        public int startingDinos = 0;
        public int totalDinos = 3;
        public int totalHerdHealth;
-       public List<Dinosaur> dinos = new List<Dinosaur>();
+        public List<Dinosaur> dinos;
 
         //constructor
         public Herd()
@@ -24,11 +24,11 @@ namespace RobotsVsDinosaursProject
             
         public void CreateHerd()
         {
+            dinos = new List<Dinosaur>();
             for (int i = 0; i < totalDinos; i++)
             {
-                Dinosaur dino = new Dinosaur();
+               Dinosaur dino = new Dinosaur();
                 dinos.Add(dino);
-                          
             }
         }
 
