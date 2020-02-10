@@ -17,9 +17,9 @@ namespace RobotsVsDinosaursProject
 
         
         //constructor
-        public Robot(string name)
+        public Robot(string name, Random random)
         {
-            weapon = new Weapon();
+            weapon = new Weapon(random);
             attackPower = weapon.attackValue;
             this.name = name;
             Console.WriteLine(name + " the Robot has spawned into the game with a " + weapon.type);
@@ -31,8 +31,16 @@ namespace RobotsVsDinosaursProject
         //member methods
         public void AttackDino(Dinosaur dino)
         {
-            dino.health -= attackPower;
-            powerLevel -= 10;
+            if (dino.health > 0 && powerLevel > 0 && health > 0)
+            {
+                dino.health -= attackPower;
+                powerLevel -= 10;
+                
+            }
+            else
+            {
+                Console.WriteLine(dino.type + " is dead and cannot be attacked");
+            }
         }
 
     }

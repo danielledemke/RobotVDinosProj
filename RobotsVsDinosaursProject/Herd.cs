@@ -11,17 +11,16 @@ namespace RobotsVsDinosaursProject
         //member variables
        public int startingDinos = 0;
        public int totalDinos = 3;
-       public int totalHerdHealth;
-        public List<Dinosaur> dinos;
+       public List<Dinosaur> dinos;
 
         //constructor
         public Herd()
         {
             CreateHerd();
             
-    }
-
-            
+        }
+       
+        //member methods        
         public void CreateHerd()
         {
             dinos = new List<Dinosaur>();
@@ -36,7 +35,7 @@ namespace RobotsVsDinosaursProject
 }
        
 
-        //member methods
+        
 
 
     

@@ -19,16 +19,14 @@ namespace RobotsVsDinosaursProject
         public Dinosaur()
         {
             ChooseDinosaur();
-           Console.WriteLine("A " + type + " dinosaur has been spawned");
+           Console.WriteLine("A " + type + " dinosaur has been spawned!");
             health = 100;
             energy = 100;
-                     
         }
 
         //member methods
         public void ChooseDinosaur()
         {
-
 
             do
             {
@@ -52,17 +50,28 @@ namespace RobotsVsDinosaursProject
                         break;
                     default:
                         Console.WriteLine("Not a valid entry");
+                        ChooseDinosaur();
                         break;
                 }
             }
             while (type == null);
             
         }
-        public int AttackRobot(Robot robot)
+        public void AttackRobot(Robot robot)
         {
-            robot.health -= attackPower;
-            energy -= 10;
-            return robot.health;
+            if (robot.health > 0 && energy > 0 && health > 0)
+            {
+                robot.health -= attackPower;
+                energy -= 10;
+            }
+            else
+            {
+                Console.WriteLine(robot.name + " is dead and cannot be attacked");
+            }
+            
+        
+
+
         }
     }
 }
