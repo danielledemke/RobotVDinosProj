@@ -19,14 +19,10 @@ namespace RobotsVsDinosaursProject
         public Dinosaur()
         {
             ChooseDinosaur();
-            this.type = type;
-            Console.WriteLine("A " + type + " dinosaur has been spawned");
-            
+           Console.WriteLine("A " + type + " dinosaur has been spawned");
             health = 100;
             energy = 100;
-
-            
-
+                     
         }
 
         //member methods
@@ -57,9 +53,11 @@ namespace RobotsVsDinosaursProject
              }
 
         }
-        public void AttackRobot()
+        public int AttackRobot(Robot robot)
         {
-
+            robot.health -= attackPower;
+            energy -= 10;
+            return robot.health;
         }
     }
 }
